@@ -3,10 +3,11 @@ import React from "react";
 import ListContact from "../components/ListContact";
 import Container from "../components/Container";
 
+const contacts = ["jose", "maria"];
 const index: React.FC = () => {
     return (
         <Container>
-            <ListContact />
+            <ListContact contactsPerPage={8} contacts={contacts} />
         </Container>
     );
 };
