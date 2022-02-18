@@ -3,7 +3,7 @@ import React from "react";
 import ListContact from "../components/ListContact";
 import Container from "../components/Container";
 
-const contacts = ["jose", "maria"];
+const contacts = [{ name: "jose" }, { name: "maria" }];
 const index: React.FC = () => {
     return (
         <Container>

@@ -6,11 +6,15 @@ import Contacts from "../Contacts";
 import ReactPaginate from "react-paginate";
 interface Props {
     contactsPerPage: number;
-    contacts: string[];
+    contacts: Contact[];
 }
 
+export type Contact = {
+    name: string;
+};
+
 const ListContact: React.FC<Props> = ({ contactsPerPage, contacts }) => {
-    const [currentContacts, setCurrentContacts] = useState(null);
+    const [currentContacts, setCurrentContacts] = useState<Contact[]>([]);
     const [pageCount, setPageCount] = useState(0);
     const [contactOffset, setContactOffset] = useState(0);
 
