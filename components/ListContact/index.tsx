@@ -11,6 +11,7 @@ interface Props {
 
 export type Contact = {
     name: string;
+    job: string;
 };
 
 const ListContact: React.FC<Props> = ({ contactsPerPage, contacts }) => {

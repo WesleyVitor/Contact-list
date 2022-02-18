@@ -1,17 +1,26 @@
 import React from "react";
 import type { Contact } from "../ListContact/";
+
+import { ListItems, Item } from "./styles";
 interface Props {
     currentContacts: Contact[];
 }
 
 const Contacts: React.FC<Props> = ({ currentContacts }) => {
     return (
-        <ul>
+        <ListItems>
             {currentContacts &&
                 currentContacts.map((contact) => {
-                    return <li>{contact.name}</li>;
+                    return (
+                        <Item>
+                            <div>
+                                <div>{contact.name}</div>
+                                {contact.job}
+                            </div>
+                        </Item>
+                    );
                 })}
-        </ul>
+        </ListItems>
     );
 };
 
