@@ -6,7 +6,7 @@ export const SectionList = styled.section`
     padding-top: 40px;
     padding-left: 32px;
     padding-right: 45px;
-    width: 552px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

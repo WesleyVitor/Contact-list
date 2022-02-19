@@ -17,6 +17,7 @@ const Contacts: React.FC<Props> = ({ currentContacts }) => {
                                 <div>{contact.name}</div>
                                 {contact.job}
                             </div>
+                            <p>...</p>
                         </Item>
                     );
                 })}
