@@ -14,7 +14,7 @@ export type Contact = {
     job: string;
 };
 
-const ListContact: React.FC<Props> = ({ contactsPerPage, contacts }) => {
+const ListContacts: React.FC<Props> = ({ contactsPerPage, contacts }) => {
     const [currentContacts, setCurrentContacts] = useState<Contact[]>([]);
     const [pageCount, setPageCount] = useState(0);
     const [contactOffset, setContactOffset] = useState(0);
@@ -51,4 +51,4 @@ const ListContact: React.FC<Props> = ({ contactsPerPage, contacts }) => {
     );
 };
 
-export default ListContact;
+export default ListContacts;

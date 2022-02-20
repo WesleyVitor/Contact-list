@@ -16,5 +16,6 @@ export const Main = styled.main`
     top: 74px;
     left: 42px;
     display: flex;
+    justify-content: space-between;
     height: 80vh;
 `;

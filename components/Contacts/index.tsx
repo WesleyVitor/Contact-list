@@ -1,5 +1,5 @@
 import React from "react";
-import type { Contact } from "../ListContact/";
+import type { Contact } from "../ListContacts";
 
 import { ListItems, Item } from "./styles";
 interface Props {
