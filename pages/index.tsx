@@ -12,10 +12,7 @@ const index: React.FC = () => {
     return (
         <Container>
             <ListContact contactsPerPage={8} contacts={contacts} />
-            <div>
-                <button>OK</button>
-                <ContactUnique />
-            </div>
+            <ContactUnique />
         </Container>
     );
 };

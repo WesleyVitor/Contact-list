@@ -2,22 +2,40 @@ import styled from "styled-components";
 
 export const MainAside = styled.aside`
     max-width: 500px;
-    background: #330033;
+    font-family: "Lato", sans-serif;
+
+    & .line {
+        display: flex;
+        margin-bottom: 21px;
+    }
 `;
 
 export const Header = styled.header`
     width: 405px;
     height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    & .name {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    & .job {
+        font-size: 14px;
+    }
 `;
 
-export const Table = styled.table`
-    margin-top: 39px;
-`;
-
-export const LineInfo = styled.tr`
-    margin-bottom: 21px;
-`;
-
-export const Info = styled.td`
+export const Caption = styled.p`
     margin-right: 34px;
+    font-size: 14px;
+    color: #8083a3;
+`;
+
+export const Info = styled.p`
+    font-size: 14px;
+    color: #1a1c1d;
 `;
