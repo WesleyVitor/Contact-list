@@ -13,7 +13,7 @@
 
 ## Criar as tabelas
 
-`np run migrate`
+`npm run migrate`
 
 ## Rodar o projeto
 
