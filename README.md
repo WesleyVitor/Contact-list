@@ -1,4 +1,4 @@
-## Lista de Contato App
+# Lista de Contato App
 
 # Tecnologias Utilizadas
 
@@ -10,5 +10,11 @@
 ` SQLITE`
 
 # Como Rodar
+
+## Criar as tabelas
+
+`np run migrate`
+
+## Rodar o projeto
 
 `npm run dev`
