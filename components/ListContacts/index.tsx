@@ -3,19 +3,15 @@ import React, { useEffect, useState } from "react";
 import { SectionList, SearchStyle, Paginate } from "./styles";
 import Contacts from "../Contacts";
 
-import ReactPaginate from "react-paginate";
+import { ContactProps } from "../../pages/index";
+
 interface Props {
     contactsPerPage: number;
-    contacts: Contact[];
+    contacts: ContactProps[];
 }
 
-export type Contact = {
-    name: string;
-    job: string;
-};
-
 const ListContacts: React.FC<Props> = ({ contactsPerPage, contacts }) => {
-    const [currentContacts, setCurrentContacts] = useState<Contact[]>([]);
+    const [currentContacts, setCurrentContacts] = useState<ContactProps[]>([]);
     const [pageCount, setPageCount] = useState(0);
     const [contactOffset, setContactOffset] = useState(0);
 

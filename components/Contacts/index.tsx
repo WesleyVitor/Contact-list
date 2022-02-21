@@ -1,9 +1,9 @@
 import React from "react";
-import type { Contact } from "../ListContacts";
+import { ContactProps } from "../../pages/index";
 
 import { ListItems, Item } from "./styles";
 interface Props {
-    currentContacts: Contact[];
+    currentContacts: ContactProps[];
 }
 
 const Contacts: React.FC<Props> = ({ currentContacts }) => {
@@ -14,7 +14,7 @@ const Contacts: React.FC<Props> = ({ currentContacts }) => {
                     return (
                         <Item>
                             <div>
-                                <div>{contact.name}</div>
+                                <div>{contact.username}</div>
                                 {contact.job}
                             </div>
                             <p>...</p>

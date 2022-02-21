@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Contact{
+  id Int @id @default(autoincrement())
+  username String 
+  job String
+  bio String
+  email1 String
+  email2 String?
+  meeting String?
+  phone1 String 
+  phone2 String?
+  instagram String?
+  twitter String?
+  Linkedin String?
+  Pinterest String?
+  facebook String?
+  isValid Boolean @default(true)
+}
