@@ -37,7 +37,7 @@ const ListContacts: React.FC<Props> = ({ contactsPerPage, contacts }) => {
                     breakLabel="..."
                     nextLabel="Prox >"
                     previousLabel="Ant  <"
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={3}
                     pageCount={pageCount}
                     renderOnZeroPageCount={null}
                     onPageChange={handlePageClick}

@@ -4,20 +4,24 @@ import ListContact from "../components/ListContacts";
 import Container from "../components/Container";
 import ContactUnique from "../components/ContactUnique";
 
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 import prisma from "../lib/prisma";
 
-export const getStaticProps: GetStaticProps = async () => {
-    await prisma.contact.create({
-        data: {
-            username: "Bruno",
-            bio: "Sou um profissional muito bom para tomar café",
-            job: "Developer",
-            email1: "Bruno@gmail.com",
-            phone1: "99878765",
-        },
-    });
+import { parseBody } from "next/dist/server/api-utils";
+
+export const getStaticProps: GetServerSideProps = async ({
+    query,
+}: GetServerSidePropsContext) => {
+    // await prisma.contact.create({
+    //     data: {
+    //         username: "Bruno",
+    //         bio: "Sou um profissional muito bom para tomar café",
+    //         job: "Developer",
+    //         email1: "Bruno@gmail.com",
+    //         phone1: "99878765",
+    //     },
+    // });
 
     const contacts = await prisma.contact.findMany({
         where: {

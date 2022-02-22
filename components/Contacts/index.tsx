@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { ContactProps } from "../../pages/index";
 
@@ -12,12 +13,19 @@ const Contacts: React.FC<Props> = ({ currentContacts }) => {
             {currentContacts &&
                 currentContacts.map((contact) => {
                     return (
-                        <Item>
+                        <Item key={contact.id}>
                             <div>
                                 <div>{contact.username}</div>
                                 {contact.job}
                             </div>
-                            <p>...</p>
+                            <Link
+                                href={{
+                                    pathname: "/",
+                                    query: { id: `${contact.id}` },
+                                }}
+                            >
+                                <a>...</a>
+                            </Link>
                         </Item>
                     );
                 })}

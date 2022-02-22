@@ -1,7 +1,21 @@
 import React from "react";
 import { Header, Info, Caption, MainAside } from "./styles";
 import Link from "next/link";
+
+import { useRouter } from "next/router";
+import useSWR from "swr";
 const ContactUnique: React.FC = () => {
+    const router = useRouter();
+    const { id } = router.query;
+    const { data, error } = useSWR(
+        `/api/getOneContact/?id=${id}`,
+        async (url) => {
+            const res = await fetch(url);
+            const json = await res.json();
+            return json;
+        }
+    );
+
     return (
         <MainAside>
             <Header>
