@@ -6,15 +6,12 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 const ContactUnique: React.FC = () => {
     const router = useRouter();
-    const { id } = router.query;
-    const { data, error } = useSWR(
-        `/api/getOneContact/?id=${id}`,
-        async (url) => {
-            const res = await fetch(url);
-            const json = await res.json();
-            return json;
-        }
-    );
+    const { id } = router.query.id != undefined ? router.query : { id: "1" };
+    const { data, error } = useSWR(`/api/contacts/${id}`, async (url) => {
+        const res = await fetch(url);
+        const json = await res.json();
+        return json;
+    });
 
     return (
         <MainAside>
