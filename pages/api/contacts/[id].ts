@@ -1,8 +1,14 @@
 import { NextApiRequest, NextApiResponse } from "next";
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
-    const { id } = req.query;
+import prisma from "../../../lib/prisma";
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+    const id = req.query.id.toString();
 
-    res.status(200).json({});
+    const contact = await prisma.contact.findUnique({
+        where: {
+            id: parseInt(id),
+        },
+    });
+    res.status(200).json(contact);
 };
 
 export default handler;

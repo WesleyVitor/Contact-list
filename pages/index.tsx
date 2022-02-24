@@ -4,15 +4,13 @@ import ListContact from "../components/ListContacts";
 import Container from "../components/Container";
 import ContactUnique from "../components/ContactUnique";
 
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { GetStaticProps } from "next";
 
 import prisma from "../lib/prisma";
 
 import { parseBody } from "next/dist/server/api-utils";
 
-export const getStaticProps: GetServerSideProps = async ({
-    query,
-}: GetServerSidePropsContext) => {
+export const getStaticProps: GetStaticProps = async () => {
     // await prisma.contact.create({
     //     data: {
     //         username: "Bruno",
@@ -20,6 +18,15 @@ export const getStaticProps: GetServerSideProps = async ({
     //         job: "Developer",
     //         email1: "Bruno@gmail.com",
     //         phone1: "99878765",
+    //     },
+    // });
+    // await prisma.contact.create({
+    //     data: {
+    //         username: "Maria",
+    //         bio: "Sou um profissional muito bom para tomar chá",
+    //         job: "Design",
+    //         email1: "Maria@gmail.com",
+    //         phone1: "99898765",
     //     },
     // });
 
