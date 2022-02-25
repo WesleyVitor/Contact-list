@@ -8,8 +8,8 @@ import { GetStaticProps } from "next";
 
 import prisma from "../lib/prisma";
 
-import { parseBody } from "next/dist/server/api-utils";
-
+import { Button } from "../styles/components/Button";
+import Link from "next/link";
 export const getStaticProps: GetStaticProps = async () => {
     // await prisma.contact.create({
     //     data: {
@@ -71,7 +71,19 @@ const index: React.FC<Props> = ({ contacts }) => {
     return (
         <Container>
             <ListContact contactsPerPage={8} contacts={contacts} />
-            <ContactUnique />
+
+            <section>
+                <Button>
+                    <Link href="#">
+                        <img
+                            src="/assets/Icon.svg"
+                            alt="Imagem do butão"
+                            title="Adicionar novo contato"
+                        />
+                    </Link>
+                </Button>
+                <ContactUnique />
+            </section>
         </Container>
     );
 };
