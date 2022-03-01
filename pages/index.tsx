@@ -10,6 +10,7 @@ import prisma from "../lib/prisma";
 
 import { Button } from "../styles/components/Button";
 import Link from "next/link";
+import { Contact } from "@prisma/client";
 export const getStaticProps: GetStaticProps = async () => {
     // await prisma.contact.create({
     //     data: {
@@ -29,7 +30,6 @@ export const getStaticProps: GetStaticProps = async () => {
     //         phone1: "99898765",
     //     },
     // });
-
     const contacts = await prisma.contact.findMany({
         where: {
             isValid: true,
@@ -74,7 +74,7 @@ const index: React.FC<Props> = ({ contacts }) => {
 
             <section>
                 <Button>
-                    <Link href="#">
+                    <Link href="/contact/add">
                         <img
                             src="/assets/Icon.svg"
                             alt="Imagem do butão"
