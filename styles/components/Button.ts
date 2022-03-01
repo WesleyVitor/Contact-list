@@ -6,7 +6,7 @@ export const Button = styled.button`
     background: #6b59cc;
     border-radius: 10px;
     border: none;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     display: block;
     cursor: pointer;
     & > img {
