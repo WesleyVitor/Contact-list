@@ -70,7 +70,7 @@ interface Props {
 const index: React.FC<Props> = ({ contacts }) => {
     return (
         <Container>
-            <ListContact contactsPerPage={8} contacts={contacts} />
+            <ListContact contactsPerPage={3} contacts={contacts} />
 
             <section>
                 <Button>
