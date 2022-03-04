@@ -12,24 +12,6 @@ import { Button } from "../styles/components/Button";
 import Link from "next/link";
 import { Contact } from "@prisma/client";
 export const getStaticProps: GetStaticProps = async () => {
-    // await prisma.contact.create({
-    //     data: {
-    //         username: "Bruno",
-    //         bio: "Sou um profissional muito bom para tomar café",
-    //         job: "Developer",
-    //         email1: "Bruno@gmail.com",
-    //         phone1: "99878765",
-    //     },
-    // });
-    // await prisma.contact.create({
-    //     data: {
-    //         username: "Maria",
-    //         bio: "Sou um profissional muito bom para tomar chá",
-    //         job: "Design",
-    //         email1: "Maria@gmail.com",
-    //         phone1: "99898765",
-    //     },
-    // });
     const contacts = await prisma.contact.findMany({
         where: {
             isValid: true,

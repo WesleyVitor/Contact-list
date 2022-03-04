@@ -3,15 +3,17 @@ import { Button } from "../../styles/components/Button";
 import { Input, Label, ContainerInput, ContainerForm } from "./styles";
 import { useForm } from "react-hook-form";
 import { ContactProps } from "../../pages/index";
-import axios from "axios";
+import { base } from "../../lib/axios";
 import { useRouter } from "next/router";
 const Form: React.FC = () => {
     const { register, handleSubmit } = useForm<ContactProps>();
     const router = useRouter();
     const FSubmit = (data: ContactProps) => {
-        axios
-            .post("http://localhost:3000/api/contacts/add", data)
-            .then(() => router.push("/"));
+        base.post("/api/contacts/add", data).then(() => router.push("/"));
+    };
+
+    const handleClick = () => {
+        router.push("/");
     };
 
     return (
@@ -19,26 +21,30 @@ const Form: React.FC = () => {
             <div>
                 <ContainerInput>
                     <Label>Username</Label>
-                    <Input {...register("username")} />
+                    <Input required {...register("username")} />
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Email</Label>
-                    <Input {...register("email1")} />
+                    <Input required {...register("email1")} />
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Bio</Label>
-                    <Input {...register("bio")} />
+                    <Input required {...register("bio")} />
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Ocupação</Label>
-                    <Input {...register("job")} />
+                    <Input required {...register("job")} />
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Celular</Label>
                     <Input {...register("phone1")} />
                 </ContainerInput>
-
-                <Button type="submit">Cadastrar</Button>
+                <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                    <Button type="submit">Cadastrar</Button>
+                    <Button onClick={() => handleClick()}>Cancelar</Button>
+                </div>
             </div>
             <div>
                 <ContainerInput>

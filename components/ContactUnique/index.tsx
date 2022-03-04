@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { ContactProps } from "../../pages";
+
 const ContactUnique: React.FC = () => {
     const router = useRouter();
     const { id } = router.query.id != undefined ? router.query : { id: "1" };
