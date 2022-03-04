@@ -48,16 +48,16 @@ const ContactUnique: React.FC = () => {
             <div className="line">
                 <Caption>Social</Caption>
                 <Info>
-                    <Link href="#">
+                    <Link href={data.facebook != null ? data.facebook : "#"}>
                         <a>Facebook</a>
                     </Link>
-                    <Link href="#">
+                    <Link href={data.instagram != null ? data.instagram : "#"}>
                         <a>Instragram</a>
                     </Link>
-                    <Link href="#">
+                    <Link href={data.twitter != null ? data.twitter : "#"}>
                         <a>Twitter</a>
                     </Link>
-                    <Link href="#">
+                    <Link href={data.Linkedin != null ? data.Linkedin : "#"}>
                         <a>Linkedin</a>
                     </Link>
                 </Info>
