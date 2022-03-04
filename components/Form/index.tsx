@@ -4,12 +4,14 @@ import { Input, Label, ContainerInput, ContainerForm } from "./styles";
 import { useForm } from "react-hook-form";
 import { ContactProps } from "../../pages/index";
 import axios from "axios";
-
+import { useRouter } from "next/router";
 const Form: React.FC = () => {
     const { register, handleSubmit } = useForm<ContactProps>();
-
+    const router = useRouter();
     const FSubmit = (data: ContactProps) => {
-        axios.post("http://localhost:3000/api/contacts/add", data);
+        axios
+            .post("http://localhost:3000/api/contacts/add", data)
+            .then(() => router.push("/"));
     };
 
     return (

@@ -8,10 +8,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
     if (isValid) {
         res.status(200)
-            .redirect("/")
             .json({ message: "Dados Cadastrados Com Sucesso!" });
     } else {
-        res.status(404).redirect("/").json({ message: "Algo deu Errado!" });
+        res.status(404).json({ message: "Algo deu Errado!" });
     }
 };
 
