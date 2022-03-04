@@ -5,8 +5,16 @@ import { useForm } from "react-hook-form";
 import { ContactProps } from "../../pages/index";
 import { base } from "../../lib/axios";
 import { useRouter } from "next/router";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "../../lib/yup.schema";
 const Form: React.FC = () => {
-    const { register, handleSubmit } = useForm<ContactProps>();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<ContactProps>({
+        resolver: yupResolver(schema),
+    });
     const router = useRouter();
     const FSubmit = (data: ContactProps) => {
         base.post("/api/contacts/add", data).then(() => router.push("/"));
@@ -21,23 +29,28 @@ const Form: React.FC = () => {
             <div>
                 <ContainerInput>
                     <Label>Username</Label>
-                    <Input required {...register("username")} />
+                    <Input {...register("username")} />
+                    <p>{errors.username?.message}</p>
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Email</Label>
-                    <Input required {...register("email1")} />
+                    <Input {...register("email1")} />
+                    <p>{errors.email1?.message}</p>
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Bio</Label>
-                    <Input required {...register("bio")} />
+                    <Input {...register("bio")} />
+                    <p>{errors.bio?.message}</p>
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Ocupação</Label>
-                    <Input required {...register("job")} />
+                    <Input {...register("job")} />
+                    <p>{errors.job?.message}</p>
                 </ContainerInput>
                 <ContainerInput>
                     <Label>Celular</Label>
                     <Input {...register("phone1")} />
+                    <p>{errors.phone1?.message}</p>
                 </ContainerInput>
                 <div
                     style={{ display: "flex", justifyContent: "space-between" }}
