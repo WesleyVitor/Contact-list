@@ -6,6 +6,10 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { ContactProps } from "../../pages";
 
+import { FacebookOutlined } from "@mui/icons-material";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const ContactUnique: React.FC = () => {
     const router = useRouter();
     const { id } = router.query.id != undefined ? router.query : { id: "1" };
@@ -49,16 +53,16 @@ const ContactUnique: React.FC = () => {
                 <Caption>Social</Caption>
                 <Info>
                     <Link href={data.facebook != null ? data.facebook : "#"}>
-                        <a>Facebook</a>
+                        <FacebookOutlined />
                     </Link>
                     <Link href={data.instagram != null ? data.instagram : "#"}>
-                        <a>Instragram</a>
+                        <InstagramIcon />
                     </Link>
                     <Link href={data.twitter != null ? data.twitter : "#"}>
-                        <a>Twitter</a>
+                        <TwitterIcon />
                     </Link>
                     <Link href={data.Linkedin != null ? data.Linkedin : "#"}>
-                        <a>Linkedin</a>
+                        <LinkedInIcon />
                     </Link>
                 </Info>
             </div>

@@ -3,6 +3,8 @@ import React from "react";
 import { ContactProps } from "../../pages/index";
 
 import { ListItems, Item } from "./styles";
+
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 interface Props {
     currentContacts: ContactProps[];
 }
@@ -24,7 +26,7 @@ const Contacts: React.FC<Props> = ({ currentContacts }) => {
                                     query: { id: `${contact.id}` },
                                 }}
                             >
-                                <a>...</a>
+                                <MoreHorizIcon style={{ cursor: "pointer" }} />
                             </Link>
                         </Item>
                     );
