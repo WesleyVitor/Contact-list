@@ -22,7 +22,7 @@ const ContactUnique: React.FC = () => {
             return json;
         }
     );
-    if (error) return <h2>Erro na requisição...</h2>;
+    if (error) return <h2>Adicione um Contato...</h2>;
     if (!data) return <h2>Carregando...</h2>;
     return (
         <MainAside>

@@ -10,7 +10,7 @@ import prisma from "../lib/prisma";
 
 import { Button } from "../styles/components/Button";
 import Link from "next/link";
-import { Contact } from "@prisma/client";
+
 export const getStaticProps: GetStaticProps = async () => {
     const contacts = await prisma.contact.findMany({
         where: {

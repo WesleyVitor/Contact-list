@@ -38,7 +38,7 @@ export const Caption = styled.p`
 export const Info = styled.p`
     font-size: 14px;
     color: #1a1c1d;
-
+    cursor: pointer;
     & a {
         margin-right: 10px;
         text-decoration: none;
