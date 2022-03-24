@@ -12,17 +12,17 @@ import { Button } from "../styles/components/Button";
 import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async () => {
+    
     const contacts = await prisma.contact.findMany({
         where: {
             isValid: true,
         },
     });
-
     return {
         props: {
             contacts,
         },
-    };
+    }
 };
 
 export type ContactProps = {
